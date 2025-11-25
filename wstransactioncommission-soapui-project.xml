@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="619b3238-c7ac-4df0-acbd-bdc54a1e6ca5" activeEnvironment="Default" name="wstransactioncommission" resourceRoot="" soapui-version="5.7.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="46eead03-b7df-4fd0-9fec-a35e0a68a8e5" wsaVersion="NONE" name="WsTransactionCommissionSoapBinding" type="wsdl" bindingName="{MotorTransferencia}WsTransactionCommissionSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.128.14.143/MotorTransferencia/wstransactioncommission.aspx?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.128.14.143/MotorTransferencia/wstransactioncommission.aspx?wsdl"><con:part><con:url>http://10.128.14.143/MotorTransferencia/wstransactioncommission.aspx?wsdl</con:url><con:content><![CDATA[<definitions name="WsTransactionCommission" targetNamespace="MotorTransferencia" xmlns:wsdlns="MotorTransferencia" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="MotorTransferencia">
+  <types>
+    <schema targetNamespace="MotorTransferencia" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+      <complexType name="SDTComisionTransferenciaPeticion">
+        <sequence>
+          <element name="Header" type="tns:SDTComisionTransferenciaPeticion.Header"></element>
+          <element name="Data" type="tns:SDTComisionTransferenciaPeticion.Data"></element>
+        </sequence>
+      </complexType>
+      <complexType name="SDTComisionTransferenciaPeticion.Header">
+        <sequence>
+          <element name="Sistema" type="xsd:string"></element>
+          <element name="Canal" type="xsd:string"></element>
+          <element name="Aplicacion" type="xsd:string"></element>
+          <element name="Usuario" type="xsd:string"></element>
+          <element name="Fecha" type="xsd:string"></element>
+          <element name="Hora" type="xsd:string"></element>
+          <element name="Lenguaje" type="xsd:string"></element>
+          <element name="IP" type="xsd:string"></element>
+          <element name="Dispositivo" type="xsd:string"></element>
+          <element name="Transaccion" type="xsd:string"></element>
+          <element name="Paso" type="xsd:string"></element>
+          <element name="GeoReferencia" type="xsd:string"></element>
+          <element name="Token" type="xsd:string"></element>
+          <element name="Referencia" type="xsd:string"></element>
+          <element name="AdicionalColeccion">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="Item" type="tns:SDTAdicional"></element>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="SDTComisionTransferenciaPeticion.Data">
+        <sequence>
+          <element name="Empresa" type="xsd:string"></element>
+          <element name="TipoIdentificador" type="xsd:string"></element>
+          <element name="Identificador" type="xsd:string"></element>
+          <element name="TipoMensaje" type="xsd:string"></element>
+          <element name="TipoTransaccion" type="xsd:string"></element>
+          <element name="SubTipoTransaccion" type="xsd:string"></element>
+          <element name="TipoProducto" type="xsd:string"></element>
+          <element name="Producto" type="xsd:string"></element>
+          <element name="Moneda" type="xsd:string"></element>
+          <element name="Monto" type="xsd:string"></element>
+          <element name="AdicionalColeccion">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="Item" type="tns:SDTAdicional"></element>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfSDTAdicional">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="SDTAdicional" type="tns:SDTAdicional"></element>
+        </sequence>
+      </complexType>
+      <complexType name="SDTAdicional">
+        <sequence>
+          <element name="Linea" type="xsd:string"></element>
+          <element name="Tipo" type="xsd:string"></element>
+          <element name="Valor" type="xsd:string"></element>
+        </sequence>
+      </complexType>
+      <complexType name="SDTRespuesta">
+        <sequence>
+          <element name="Codigo" type="xsd:string"></element>
+          <element name="Tipo" type="xsd:string"></element>
+          <element name="Mensaje" type="xsd:string"></element>
+          <element name="Detalle" type="xsd:string"></element>
+          <element name="Referencia" type="xsd:string"></element>
+          <element name="AdicionalColeccion">
+            <complexType>
+              <sequence>
+                <element minOccurs="0" maxOccurs="unbounded" name="Item" type="tns:SDTComisionTransferenciaRespuesta.Item"></element>
+              </sequence>
+            </complexType>
+          </element>
+        </sequence>
+      </complexType>
+      <complexType name="ArrayOfSDTComisionTransferenciaRespuesta.Item">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="SDTComisionTransferenciaRespuesta.Item" type="tns:SDTComisionTransferenciaRespuesta.Item"></element>
+        </sequence>
+      </complexType>
+      <complexType name="SDTComisionTransferenciaRespuesta.Item">
+        <sequence>
+          <element name="Linea" type="xsd:string"></element>
+          <element name="Tipo" type="xsd:string"></element>
+          <element name="Valor" type="xsd:string"></element>
+        </sequence>
+      </complexType>
+      <element name="WsTransactionCommission.Execute">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="Peticion" type="tns:SDTComisionTransferenciaPeticion"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="WsTransactionCommission.ExecuteResponse">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="Respuesta" type="tns:SDTRespuesta"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="WsTransactionCommission.ExecuteSoapIn">
+    <part name="parameters" element="tns:WsTransactionCommission.Execute"/>
+  </message>
+  <message name="WsTransactionCommission.ExecuteSoapOut">
+    <part name="parameters" element="tns:WsTransactionCommission.ExecuteResponse"/>
+  </message>
+  <portType name="WsTransactionCommissionSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:WsTransactionCommission.ExecuteSoapIn"/>
+      <output message="wsdlns:WsTransactionCommission.ExecuteSoapOut"/>
+    </operation>
+  </portType>
+  <binding name="WsTransactionCommissionSoapBinding" type="wsdlns:WsTransactionCommissionSoapPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="Execute">
+      <soap:operation soapAction="MotorTransferenciaaction/AWSTRANSACTIONCOMMISSION.Execute"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="WsTransactionCommission">
+    <port name="WsTransactionCommissionSoapPort" binding="wsdlns:WsTransactionCommissionSoapBinding">
+      <soap:address location="http://10.128.14.143/MotorTransferencia/wstransactioncommission.aspx"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.128.14.143/MotorTransferencia/wstransactioncommission.aspx</con:endpoint></con:endpoints><con:operation id="8a89a7f3-ecac-47e4-8730-7ed76927f813" isOneWay="false" action="MotorTransferenciaaction/AWSTRANSACTIONCOMMISSION.Execute" name="Execute" bindingOperationName="Execute" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e5a89bf1-6127-40f4-976f-f1c77ef9a719" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.128.14.143/MotorTransferencia/wstransactioncommission.aspx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mot="MotorTransferencia">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <mot:WsTransactionCommission.Execute>\r
+         <mot:Peticion>\r
+            <mot:Header>\r
+               <mot:Sistema>?</mot:Sistema>\r
+               <mot:Canal>?</mot:Canal>\r
+               <mot:Aplicacion>?</mot:Aplicacion>\r
+               <mot:Usuario>?</mot:Usuario>\r
+               <mot:Fecha>?</mot:Fecha>\r
+               <mot:Hora>?</mot:Hora>\r
+               <mot:Lenguaje>?</mot:Lenguaje>\r
+               <mot:IP>?</mot:IP>\r
+               <mot:Dispositivo>?</mot:Dispositivo>\r
+               <mot:Transaccion>?</mot:Transaccion>\r
+               <mot:Paso>?</mot:Paso>\r
+               <mot:GeoReferencia>?</mot:GeoReferencia>\r
+               <mot:Token>?</mot:Token>\r
+               <mot:Referencia>?</mot:Referencia>\r
+               <mot:AdicionalColeccion>\r
+                  <!--Zero or more repetitions:-->\r
+                  <mot:Item>\r
+                     <mot:Linea>?</mot:Linea>\r
+                     <mot:Tipo>?</mot:Tipo>\r
+                     <mot:Valor>?</mot:Valor>\r
+                  </mot:Item>\r
+               </mot:AdicionalColeccion>\r
+            </mot:Header>\r
+            <mot:Data>\r
+               <mot:Empresa>1</mot:Empresa>\r
+               <mot:TipoIdentificador>4</mot:TipoIdentificador>\r
+               <mot:Identificador>0801196206562</mot:Identificador>\r
+               <mot:TipoMensaje>MT103</mot:TipoMensaje>\r
+               <mot:TipoTransaccion>TIPOPETRNENT</mot:TipoTransaccion>\r
+               <mot:SubTipoTransaccion>?</mot:SubTipoTransaccion>\r
+               <mot:TipoProducto>1</mot:TipoProducto>\r
+               <mot:Producto>1</mot:Producto>\r
+               <mot:Moneda>NIO</mot:Moneda>\r
+               <mot:Monto>15000.00</mot:Monto>\r
+               <mot:AdicionalColeccion>\r
+                  <!--Zero or more repetitions:-->\r
+                  <mot:Item>\r
+                     <mot:Linea>?</mot:Linea>\r
+                     <mot:Tipo>?</mot:Tipo>\r
+                     <mot:Valor>?</mot:Valor>\r
+                  </mot:Item>\r
+               </mot:AdicionalColeccion>\r
+            </mot:Data>\r
+         </mot:Peticion>\r
+      </mot:WsTransactionCommission.Execute>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="MotorTransferenciaaction/AWSTRANSACTIONCOMMISSION.Execute"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
