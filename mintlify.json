@@ -1,1 +1,16 @@
+{
+  "name": "MotorTransferencia",
+  "logo": "/logo.png",
+  "mode": "docs",
+  "sidebar": [
+    {
+      "group": "Overview",
+      "pages": ["index.md"]
+    },
+    {
+      "group": "Modules",
+      "pages": []
+    }
+  ]
+}
 
